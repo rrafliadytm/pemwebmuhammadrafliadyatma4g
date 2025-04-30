@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Case Sensitivity Muhammad Rafli Adyatma</title>
+</head>
+<body>
+    <h1>Berikut Adalah Contoh Case Sensitivity Pada JavaScript</h1>
+    <p>Di dalam JavaScript, penulisan huruf besar dan huruf kecil sangat dibedakan atau singkatnya adalah bersifat Case Sensitivity</p>
+    <p>Berikut adalah contohnya:</p>
+    <pre>    
+    var name = "John";
+    var Name = "Jane";
+    </pre>
+    <script>
+        var name = "John";
+        var Name = "Rafli Adyatma";
+
+        function showMessage() {
+            alert("This is showMessage function");
+        }
+
+        function ShowMessage() {
+            alert("This is ShowMessage function");
+}
+    </script>
+    <button onclick="alert(name)">Alert variable 'name'</button>
+    <button onclick="alert(Name)">Alert variable 'Name'</button>
+    <button onclick="showMessage()">Call showMessage()</button>
+    <button onclick="ShowMessage()">Call ShowMessage()</button>
+</body>
+</html>

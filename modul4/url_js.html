@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript URL Muhammad Rafli Adyatma</title>
+</head>
+<body>
+    <h1>Inilah Contoh JavaScript yang Menggunakan URL</h1>
+    <p id="message">Coba Klik Link Di Bawah Ini Untuk Membuktikan Bahwa JavaScript ini menggunakan URL!</p>
+    <a href="javascript:changeMessage()">Klik Disini Please</a>
+
+    <script>
+        function changeMessage() {
+            document.getElementById('message').textContent = 'Selamat Anda Telah Terkena Link Phising!';
+            alert('Selamat Anda Telah Terkena Link Phising!');
+        }
+    </script>
+</body>
+</html>
