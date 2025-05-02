@@ -1,3 +1,14 @@
+ // Fungsi untuk memilih menu calculator
+ function showCalculator() {
+    const calculators = document.querySelectorAll('.calculator');
+    calculators.forEach(calculator => calculator.style.display = 'none');
+
+    const selectedValue = document.getElementById('selectCalculator').value;
+    if (selectedValue) {
+        document.getElementById(selectedValue).style.display = 'block';
+    }
+}
+ 
  // Fungsi untuk menghitung volume kubus
  function calculateVolumeKubus() {
     const sisiKubus = parseFloat(document.getElementById('sisiKubus').value);

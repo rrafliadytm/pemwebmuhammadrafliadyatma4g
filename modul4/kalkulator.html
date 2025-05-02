@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kalkulator Bangun Ruang Muhammad Rafli Adyatma</title>
     <script src="/modul4/javascript/script.js"></script>
 
-    <!-- Internal CSS -->
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 2rem;
             background-color: #f0f0f0;
         }
+        #selectCalculator {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
         .calculator {
+            display: none;
             position: inherit;
             margin: 0 auto;
             text-align: center;
@@ -53,24 +66,37 @@
             font-size: 1.2rem;
             font-weight: bold;
         }
+
     </style>
 </head>
 
 <body>
+    <!-- Opsi Memilih Tipe Rumus Kalkulator -->
+    <h1>Selamat Datang di Kalkulator Bangun Ruang Muhammad Rafli Adyatma</h1>
+    <br><br><br>
+    <label for="selectCalculator">Pilih Rumus Dulu Loh Ya Rek:</label>
+    <select id="selectCalculator" onchange="showCalculator()">
+        <option value="">-- Silahkan Dipilih Kalkulatornya --</option>
+        <option value="kubus">Volume Kubus</option>
+        <option value="balok">Volume Balok</option>
+        <option value="tabung">Volume Tabung</option>
+        <option value="kerucut">Volume Kerucut</option>
+        <option value="bola">Volume Bola</option>
+        <option value="prisma">Volume Prisma Segitiga</option>
+    </select>
+
     <!-- Kalkulator Kubus -->
-    <div class="calculator">
-        <h1>Calculator Untuk Menghitung Volume Kubus</h1>
+    <div class="calculator" id="kubus">
+        <h2>Calculator Untuk Menghitung Volume Kubus</h2>
         <label for="sisiKubus">Sisi (cm):</label>
         <input type="number" id="sisiKubus" min="0" step="any" />
         <button onclick="calculateVolumeKubus()">Klik Hitung Volume</button>
         <div class="result" id="hasilKubus"></div>
     </div>
 
-    <br><br><br>
-
     <!-- Kalkulator Balok -->
-    <div class="calculator">
-        <h1>Calculator Untuk Menghitung Volume Balok</h1>
+    <div class="calculator" id="balok">
+        <h2>Calculator Untuk Menghitung Volume Balok</h2>
         <label for="panjangBalok">Panjang (cm):</label>
         <input type="number" id="panjangBalok" min="0" step="any" />
         <label for="lebarBalok">Lebar (cm):</label>
@@ -81,11 +107,9 @@
         <div class="result" id="hasilBalok"></div>
     </div>
 
-    <br><br><br>
-
     <!-- Kalkulator Tabung -->
-    <div class="calculator">
-        <h1>Calculator Untuk Menghitung Volume Tabung</h1>
+    <div class="calculator" id="tabung">
+        <h2>Calculator Untuk Menghitung Volume Tabung</h2>
         <label for="jariTabung">Jari-jari (cm):</label>
         <input type="number" id="jariTabung" min="0" step="any" />
         <label for="tinggiTabung">Tinggi (cm):</label>
@@ -93,12 +117,10 @@
         <button onclick="calculateVolumeTabung()">Klik Hitung Volume</button>
         <div class="result" id="hasilTabung"></div>
     </div>
-    
-    <br><br><br>
 
     <!-- Kalkulator Kerucut -->
-    <div class="calculator">
-        <h1>Calculator Untuk Menghitung Volume Kerucut</h1>
+    <div class="calculator" id="kerucut">
+        <h2>Calculator Untuk Menghitung Volume Kerucut</h2>
         <label for="jariKerucut">Jari-jari (cm):</label>
         <input type="number" id="jariKerucut" min="0" step="any" />
         <label for="tinggiKerucut">Tinggi (cm):</label>
@@ -107,22 +129,18 @@
         <div class="result" id="hasilKerucut"></div>
     </div>
 
-    <br><br><br>
-
     <!-- Kalkulator Bola -->
-    <div class="calculator">
-        <h1>Calculator Untuk Menghitung Volume Bola</h1>
+    <div class="calculator" id="bola">
+        <h2>Calculator Untuk Menghitung Volume Bola</h2>
         <label for="jariBola">Jari-jari (cm):</label>
         <input type="number" id="jariBola" min="0" step="any" />
         <button onclick="calculateVolumeBola()">Klik Hitung Volume</button>
         <div class="result" id="hasilBola"></div>
     </div>
 
-    <br><br><br>
-
     <!-- Kalkulator Prisma Segitiga -->
-    <div class="calculator">
-        <h1>Calculator Untuk Menghitung Volume Prisma Segitiga</h1>
+    <div class="calculator" id="prisma">
+        <h2>Calculator Untuk Menghitung Volume Prisma Segitiga</h2>
         <label for="panjangAlasPrisma">Panjang Alas (cm):</label>
         <input type="number" id="panjangAlasPrisma" min="0" step="any" />
         <label for="tinggiAlasPrisma">Tinggi Alas (cm):</label>
