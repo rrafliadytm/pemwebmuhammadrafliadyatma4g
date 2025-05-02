@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kalkulator Bangun Ruang Muhammad Rafli Adyatma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 8px;
+            max-width: 700px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Kalkulator Kubus -->
+    <div class="calculator">
+        <h1>Calculator Untuk Menghitung Volume Kubus</h1>
+        <label for="side">Sisi (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <button onclick="calculateVolumeKubus()">Klik Hitung Volume</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <br><br><br>
+
+    <!-- Kalkulator Balok -->
+    <div class="calculator">
+        <h1>Calculator Untuk Menghitung Volume Balok</h1>
+        <label for="side">Panjang (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <label for="side">Lebar (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <label for="side">Tinggi (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <button onclick="calculateVolumeBalok()">Klik Hitung Volume</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <br><br><br>
+
+    <!-- Kalkulator Tabung -->
+    <div class="calculator">
+        <h1>Calculator Untuk Menghitung Volume Tabung</h1>
+        <label for="side">Jari-jari (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <label for="side">Tinggi (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <button onclick="calculateVolumeTabung()">Klik Hitung Volume</button>
+        <div class="result" id="result"></div>
+    </div>
+    
+    <br><br><br>
+
+    <!-- Kalkulator Kerucut -->
+    <div class="calculator">
+        <h1>Calculator Untuk Menghitung Volume Kerucut</h1>
+        <label for="side">Jari-jari (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <label for="side">Tinggi (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <button onclick="calculateVolumeKerucut()">Klik Hitung Volume</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <br><br><br>
+
+    <!-- Kalkulator Bola -->
+    <div class="calculator">
+        <h1>Calculator Untuk Menghitung Volume Bola</h1>
+        <label for="side">Jari-jari (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <button onclick="calculateVolumeBola()">Klik Hitung Volume</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <br><br><br>
+
+    <!-- Kalkulator Prisma Segitiga -->
+    <div class="calculator">
+        <h1>Calculator Untuk Menghitung Volume Prisma Segitiga</h1>
+        <label for="side">Panjang Alas (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <label for="side">Tinggi Alas (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <label for="side">Tinggi Prisma (cm):</label>
+        <input type="number" id="side" min="0" step="any" />
+        <button onclick="calculateVolumePrismaSegitiga()">Klik Hitung Volume</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Fungsi untuk menghitung volume kubus
+        function calculateVolumeKubus() {
+            const side = parseFloat(document.getElementById('side').value);
+            if (isNaN(side) || side <= 0) {
+                alert('Please enter a valid positive number for the side length.');
+                return;
+            }
+            const volume = side * side * side;
+            document.getElementById('result').textContent = 'Volume of the cube: ' + volume.toFixed(2) + ' cubic cm';
+        }
+
+        // Fungsi untuk menghitung volume balok
+        function calculateVolume() {
+            const length = parseFloat(document.getElementById('length').value);
+            const width = parseFloat(document.getElementById('width').value);
+            const height = parseFloat(document.getElementById('height').value);
+            if (isNaN(length) || length <= 0 || isNaN(width) || width <= 0 || isNaN(height) || height <= 0) {
+                alert('Please enter valid positive numbers for length, width, and height.');
+                return;
+            }
+            const volume = length * width * height;
+            document.getElementById('result').textContent = 'Volume of the cuboid: ' + volume.toFixed(2) + ' cubic cm';
+        }
+
+        // Fungsi untuk menghitung volume tabung
+        function calculateVolumeTabung() {
+            const radius = parseFloat(document.getElementById('radius').value);
+            const height = parseFloat(document.getElementById('height').value);
+            if (isNaN(radius) || radius <= 0 || isNaN(height) || height <= 0) {
+                alert('Please enter valid positive numbers for radius and height.');
+                return;
+            }
+            const volume = Math.PI * radius * radius * height;
+            document.getElementById('result').textContent = 'Volume of the cylinder: ' + volume.toFixed(2) + ' cubic cm';
+        }
+
+        // Fungsi untuk menghitung volume kerucut
+        function calculateVolumeKerucut() {
+            const radius = parseFloat(document.getElementById('radius').value);
+            const height = parseFloat(document.getElementById('height').value);
+            if (isNaN(radius) || radius <= 0 || isNaN(height) || height <= 0) {
+                alert('Please enter valid positive numbers for radius and height.');
+                return;
+            }
+            const volume = (1 / 3) * Math.PI * radius * radius * height;
+            document.getElementById('result').textContent = 'Volume of the cone: ' + volume.toFixed(2) + ' cubic cm';
+        }
+
+        // Fungsi untuk menghitung volume bola
+        function calculateVolumeBola() {
+            const radius = parseFloat(document.getElementById('radius').value);
+            if (isNaN(radius) || radius <= 0) {
+                alert('Please enter a valid positive number for the radius.');
+                return;
+            }
+            const volume = (4 / 3) * Math.PI * radius * radius * radius;
+            document.getElementById('result').textContent = 'Volume of the sphere: ' + volume.toFixed(2) + ' cubic cm';
+        }
+
+        // Fungsi untuk menghitung volume prisma segitiga
+        function calculateVolumePrismaSegitiga() {
+            const base = parseFloat(document.getElementById('base').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const prismHeight = parseFloat(document.getElementById('prismHeight').value);
+            if (isNaN(base) || base <= 0 || isNaN(height) || height <= 0 || isNaN(prismHeight) || prismHeight <= 0) {
+                alert('Please enter valid positive numbers for base, height, and prism height.');
+                return;
+            }
+            const volume = (1 / 2) * base * height * prismHeight;
+            document.getElementById('result').textContent = 'Volume of the triangular prism: ' + volume.toFixed(2) + ' cubic cm';
+        }
+    </script>
+</body>
+</html>
