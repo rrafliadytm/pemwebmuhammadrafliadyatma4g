@@ -51,42 +51,58 @@ body {
 
 /* STYLE CSS UNTUK CARD BAGIAN BAWAH */
 .biocard {
-    background-color: white; 
-    width: 100%;
-    padding-bottom: 20cm;
-    position: absolute;
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    position: relative;
     top: 25cm;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    border-radius: 50px;
+}
+
+
+.biocard img {
+    width: 350px;
+    height: 350px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+    border-radius: 20px;
+    position: static; /* Hapus absolute */
 }
 
 .biotext {
     font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
-    margin-top: 2cm;
-    margin-left: 2cm;
-    margin-right: 2cm;
-    position: absolute;
-    top: 0;
-    left: 20cm;
-    right: 0;
-    bottom: 0;
+    font-size: 0.7rem;
+    margin: 0;
+    box-sizing: border-box;
+    align-self: flex-start;
+    overflow-wrap: break-word;
 }
 
 .biocard .biotext h1 {
     font-size: 5rem;
     margin-top: -0.5cm;
-    margin-bottom: 2cm;
+    margin-bottom: 0cm;
 }
-
-.biocard img {
-    width: 600px;
-    height: 600px; 
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 2cm;
-    left: 3cm;
-    right: 0;
-    bottom: 0;
+@media (max-width: 900px) {
+    .biocard {
+        flex-direction: column;
+        align-items: center;
+    }
+    .biocard img {
+        width: 50vw;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    .biotext {
+        font-size: 0.7rem;
+        max-width: 100%;
+        text-align: center;
+    }
+    .biocard .biotext h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
 }
